@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-5xl text-center mt-6">Let's get some <span
+                class="font-bold text-violet-400">Mooooooooooooney</span>!!!</h1>
+    </header>
+    <main class="container mx-auto">
+        <section class="mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-9/12 mx-auto text-white">
+                <div class="bg-green-500 p-8 rounded-xl">
+                    <h4 class="text-2xl">Deposit</h4>
+                    <h3 class="text-5xl">$00</h3>
+                </div>
+                <div class="bg-red-500 p-8 rounded-xl">
+                    <h4 class="text-2xl">Withdraw</h4>
+                    <h3 class="text-5xl">$00</h3>
+                </div>
+                <div class="bg-purple-500 p-8 rounded-xl">
+                    <h4 class="text-2xl">Balance</h4>
+                    <h3 class="text-5xl">$1240</h3>
+                </div>
+            </div>
+        </section>
+        <!-- deposit and withdraw -->
+        <section class="mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-9/12 mx-auto text-white">
+                <div class="bg-blue-500 p-8 rounded-xl">
+                    <h4 class="text-2xl">Please Deposit</h4>
+                    <input class="block w-full my-5 p-3 rounded-lg" type="number" id="deposit-field" placeholder="$ Amount You Want To Deposit">
+                    <input
+                        class="block px-3 py-2 bg-green-500 hover:bg-green-200 hover:cursor-pointer rounded-lg font-semibold text-white hover:text-green-950"
+                        type="button" value="Deposit" id="btn-deposit">
+                </div>
+                <div class="bg-purple-600 p-8 rounded-xl">
+                    <h4 class="text-2xl">Please Withdraw</h4>
+                    <input class="block w-full my-5 p-3 rounded-lg" type="number" id="withdraw-field" placeholder="$ Amount Yow Want To Withdraw">
+                    <input
+                        class="block px-3 py-2 bg-red-500 hover:bg-red-100 cursor-pointer rounded-lg font-semibold text-white hover:text-red-500"
+                        type="button" value="Withdraw" id="btn-withdraw">
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
