@@ -1,27 +1,55 @@
-// step-1: add event listener to the deposit button
+/* 
+1. add event handler with the withdraw button
+2. get the withdraw amount from the withdraw input field
+2-5. also make sure to convert the input into a number using parseFloat
+
+3. Ge previous withdraw total
+
+4. calculate total withdraw amount
+4-5. set total withdraw amount
+
+5. get the previous balance total
+6. calculate new balance total
+6-5. set the new balance total
+
+7. clear the input field
+*/
+
+// step-1:
 document.querySelector("#btn-withdraw").addEventListener('click', function () {
-    // step-2: get the withdraw amount form the withdraw input field
-    // For input field use .value to the value inside the input field
+    // step-2:
     const withdrawField = document.querySelector("#withdraw-field");
+    // step-2-5:
     const newWithdrawAmount = parseFloat(withdrawField.value);
     
-    // step-3: get the current withdraw total
+    // step-7:
+    withdrawField.value = '';
+    
+    if(isNaN(newWithdrawAmount) || newWithdrawAmount <= 0) {
+        alert('Please provide a positive number');
+        return;
+    }
+    
+    // step-3:
     const withdrawTotalElement = document.querySelector("#withdraw-total");
     const withdrawPreviousTotal = parseFloat(withdrawTotalElement.innerText);
     
-    // step-4: add number to set the total withdraw
-    const updatedWithdrawTotal = withdrawPreviousTotal + newWithdrawAmount;
-    withdrawTotalElement.innerText = updatedWithdrawTotal;
-
-    // step-5: get ballance current total
+    // step-5:
     const balanceTotalElement = document.querySelector("#balance-total");
     const previousBalanceTotal = parseFloat(balanceTotalElement.innerText);
-
-    // step-6: calculate current total balance
+    
+    if(previousBalanceTotal < newWithdrawAmount) {
+        alert('Account e eto taka nai');
+        return;
+    }
+    
+    // step-4:
+    const updatedWithdrawTotal = withdrawPreviousTotal + newWithdrawAmount;
+    // step-4-5:
+    withdrawTotalElement.innerText = updatedWithdrawTotal;
+    
+    // step-6:
     const currentBalanceTotal = previousBalanceTotal - newWithdrawAmount;
-    // set the balance total
+    // step-6-5:
     balanceTotalElement.innerText = currentBalanceTotal;
-
-    // step-7: clear the withdraw field
-    withdrawField.value = '';
 });
